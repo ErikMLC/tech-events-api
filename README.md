@@ -267,17 +267,6 @@ tech-events-api/
 
 ---
 
-## 🚧 Próximas Mejoras
-
-- [ ] Autenticación con JWT
-- [ ] Rate limiting
-- [ ] Caché con Redis
-- [ ] WebSockets para eventos en tiempo real
-- [ ] Sistema de notificaciones
-- [ ] Export a CSV/PDF
-
----
-
 ## 👤 Autor
 
 **Erik Chalacama**
