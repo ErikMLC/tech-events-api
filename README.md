@@ -280,9 +280,9 @@ tech-events-api/
 
 ## 👤 Autor
 
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- Email: tu-email@ejemplo.com
+**Erik Chalacama**
+- GitHub: [@ErikMLC](https://github.com/ErikMLC)
+- Email: erik.chalacama@epn.edu.ec
 
 ---
 
