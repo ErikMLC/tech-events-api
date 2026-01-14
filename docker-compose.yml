@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # Servicio de la API FastAPI
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tech-events-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URL=${MONGODB_URL}
+      - DATABASE_NAME=${DATABASE_NAME}
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+    volumes:
+      # Hot-reload: montar código fuente
+      - ./app:/app/app
+    env_file:
+      - .env
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+    networks:
+      - tech-events-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  tech-events-network:
+    driver: bridge
